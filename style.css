@@ -20,4 +20,10 @@ html, body {
 }
 .footer-container {
     grid-row: 3 / 4;
+    display: flex;
+    justify-content: center;
+}
+.git {
+    margin: 0;
+    margin-bottom: 15px;
 }
