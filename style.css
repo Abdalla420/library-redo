@@ -27,13 +27,18 @@ html, body {
     background-image: url(./images/wall.jpg);
     background-size: cover;
     display: flex;
-
+    justify-content: center;
+    align-items: center;
 }
 .cardboard {
-    max-height: 5rem;
-    padding: 5rem;
+    padding: 4rem;
     background-image: url(./images/cardboard.png);
     background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
 }
 h1 {
     margin: 0;
