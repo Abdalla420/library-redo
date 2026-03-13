@@ -15,6 +15,8 @@ html, body {
 .header-container {
     grid-row: 1 / 2;
 }
-.shelf-conatiner {
+.shelf-container {
     grid-row: 2 / 3;
+    background-image: url(./images/background.png);
+    background-size: cover;
 }
