@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Marker';
+    src: url('MarkerRegularRegular.woff2') format('woff2'),
+        url('MarkerRegularRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
