@@ -16,6 +16,17 @@ html, body {
     grid-row: 1 / 2;
     background-image: url(./images/wall.jpg);
     background-size: cover;
+    display: flex;
+
+}
+.cardboard {
+    max-height: 5rem;
+    padding: 5rem;
+    background-image: url(./images/cardboard.png);
+    background-size: cover;
+}
+h1 {
+    margin: 0;
 }
 .shelf-container {
     grid-row: 2 / 3;
