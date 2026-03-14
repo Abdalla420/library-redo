@@ -20,11 +20,14 @@ function displayBooks() {
 
         const spine = document.createElement("div");
         spine.className = "spine";
-        
 
-        const bookTitle = document.createElement("p");
-        bookTitle.className = "title";
-        bookTitle.textContent = value.title;
+        const bookTitleSpine = document.createElement("p");
+        bookTitleSpine.className = "titleSpine";
+        bookTitleSpine.textContent = value.title;
+
+        const bookTitleCard = document.createElement("p");
+        bookTitleCard.className = "titleCard";
+        bookTitleCard.textContent = value.title;
 
         const authorName = document.createElement("p")
         authorName.className = "author";
@@ -37,13 +40,14 @@ function displayBooks() {
         const bookStatus = document.createElement("p");
         bookStatus.className = "status";
         if (value.status == true){
-            bookPages.textContent = `Done`;
+            bookStatus.textContent = `Done`;
         }else {
-            bookPages.textContent = "—";
+            bookStatus.textContent = "—";
         }
 
-        card.append(bookTitle, authorName, bookPages, bookStatus);
-        shelf.append(card);
+        card.append(bookTitleCard, authorName, bookPages, bookStatus);
+        spine.append(bookTitleSpine);
+        shelf.append(spine, card);
     }
 }
 addBookToLibrary("Mo", "egypt", 69, true);
