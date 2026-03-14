@@ -18,6 +18,10 @@ function displayBooks() {
         const card = document.createElement("div");
         card.className = "card";
 
+        const spine = document.createElement("div");
+        spine.className = "spine";
+        
+
         const bookTitle = document.createElement("p");
         bookTitle.className = "title";
         bookTitle.textContent = value.title;
@@ -33,9 +37,9 @@ function displayBooks() {
         const bookStatus = document.createElement("p");
         bookStatus.className = "status";
         if (value.status == true){
-            bookPages.textContent = `✅ Read`;
+            bookPages.textContent = `Done`;
         }else {
-            bookPages.textContent = "📚 Unread";
+            bookPages.textContent = "—";
         }
 
         card.append(bookTitle, authorName, bookPages, bookStatus);
