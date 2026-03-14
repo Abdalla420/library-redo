@@ -26,17 +26,20 @@ html, body {
     grid-row: 1 / 2;
     background-image: url(./images/wall.jpg);
     background-size: cover;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
 }
 .cardboard {
     padding: 40px;
     background-image: url(./images/cardboard.png);
     background-size: cover;
     background-repeat: no-repeat;
-    margin-right: auto;
-    margin-left: auto;
+    /* margin-right: auto;
+    margin-left: auto; */
+    grid-column: 2 / 3;
     display: flex;
     justify-content: center;
 }
@@ -47,6 +50,9 @@ h1 {
 }
 .add {
     margin-right: 30px;
+    grid-column: 3 / 4;
+    justify-self: end;
+    align-self: center;
     padding: 10px;
     background-color: #333333;
     color: white;
