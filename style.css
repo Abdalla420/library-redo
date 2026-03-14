@@ -85,8 +85,6 @@ h1 {
     background-color: brown;
     writing-mode: sideways-lr;
     max-height: auto;
-    /* display: flex;
-    justify-content: center; */
 }
 .titleSpine {
     margin: 0;
