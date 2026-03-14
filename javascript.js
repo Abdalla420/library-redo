@@ -13,8 +13,12 @@ function addBookToLibrary(a, t, p, s) {
     myLibrary.push(createBook);
 }
 function displayBooks() {
-    const shelf = document.querySelector(".shelf-container")
+    const shelf = document.querySelector(".shelf-container");
     for (const value of myLibrary){
+
+        const cover = document.createElement("div");
+        cover.className = "cover";
+
         const card = document.createElement("div");
         card.className = "card";
 
@@ -47,7 +51,8 @@ function displayBooks() {
 
         card.append(bookTitleCard, authorName, bookPages, bookStatus);
         spine.append(bookTitleSpine);
-        shelf.append(spine, card);
+        cover.append(spine, card);
+        shelf.append(cover)
     }
 }
 addBookToLibrary("Mo", "egypt", 69, true);
