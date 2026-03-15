@@ -76,11 +76,15 @@ h1 {
     justify-self: center;
     align-self: center;
     display: flex;
+    width: 150px;
+    height: 220px;
+    max-height: 200px;
 }
 .card {
     padding: 2rem;
     background-color: cornsilk;
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 3px 10px 10px 3px;
+    flex: 1;
 }
 .spine {
     background-color: brown;
