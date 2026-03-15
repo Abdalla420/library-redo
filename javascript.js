@@ -24,6 +24,14 @@ function displayBooks() {
 
         const ribbon = document.createElement("div");
         ribbon.className = "ribbon";
+        
+        const bookStatus = document.createElement("p");
+        bookStatus.className = "status";
+        if (value.status == true){
+            bookStatus.textContent = `Done`;
+        }else {
+            bookStatus.textContent = "—";
+        }
 
         const spine = document.createElement("div");
         spine.className = "spine";
@@ -44,15 +52,8 @@ function displayBooks() {
         bookPages.className = "pages";
         bookPages.textContent = `${value.pages} pages`
 
-        const bookStatus = document.createElement("p");
-        bookStatus.className = "status";
-        if (value.status == true){
-            bookStatus.textContent = `Done`;
-        }else {
-            bookStatus.textContent = "—";
-        }
-
-        card.append(ribbon, bookTitleCard, authorName, bookPages, bookStatus);
+        ribbon.append(bookStatus);
+        card.append(ribbon, bookTitleCard, authorName, bookPages);
         spine.append(bookTitleSpine);
         cover.append(spine, card);
         shelf.append(cover)
