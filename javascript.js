@@ -18,10 +18,32 @@ function displayBooks() {
 
         const cover = document.createElement("div");
         cover.className = "cover";
+        
+        //spine and its child
+        const spine = document.createElement("div");
+        spine.className = "spine";
+        
+        const bookTitleSpine = document.createElement("p");
+        bookTitleSpine.className = "titleSpine";
+        bookTitleSpine.textContent = value.title;
 
+        // card and its children including ribbon
         const card = document.createElement("div");
         card.className = "card";
 
+        const bookTitleCard = document.createElement("p");
+        bookTitleCard.className = "titleCard";
+        bookTitleCard.textContent = value.title;
+
+        const authorName = document.createElement("p")
+        authorName.className = "author";
+        authorName.textContent = `By ${value.author}`;
+        
+        const bookPages = document.createElement("p");
+        bookPages.className = "pages";
+        bookPages.textContent = `${value.pages} pages`
+        
+        // ribbon and its child
         const ribbon = document.createElement("div");
         ribbon.className = "ribbon";
         
@@ -32,26 +54,7 @@ function displayBooks() {
         }else {
             bookStatus.textContent = "—";
         }
-
-        const spine = document.createElement("div");
-        spine.className = "spine";
-
-        const bookTitleSpine = document.createElement("p");
-        bookTitleSpine.className = "titleSpine";
-        bookTitleSpine.textContent = value.title;
-
-        const bookTitleCard = document.createElement("p");
-        bookTitleCard.className = "titleCard";
-        bookTitleCard.textContent = value.title;
-
-        const authorName = document.createElement("p")
-        authorName.className = "author";
-        authorName.textContent = `By ${value.author}`;
-
-        const bookPages = document.createElement("p");
-        bookPages.className = "pages";
-        bookPages.textContent = `${value.pages} pages`
-
+        
         ribbon.append(bookStatus);
         card.append(ribbon, bookTitleCard, authorName, bookPages);
         spine.append(bookTitleSpine);
