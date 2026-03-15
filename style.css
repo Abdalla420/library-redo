@@ -80,6 +80,7 @@ h1 {
 .card {
     padding: 2rem;
     background-color: cornsilk;
+    border-radius: 0px 10px 10px 0px;
 }
 .spine {
     background-color: brown;
