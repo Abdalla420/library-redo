@@ -22,6 +22,9 @@ function displayBooks() {
         const card = document.createElement("div");
         card.className = "card";
 
+        const ribbon = document.createElement("div");
+        ribbon.className = "ribbon";
+
         const spine = document.createElement("div");
         spine.className = "spine";
 
@@ -49,7 +52,7 @@ function displayBooks() {
             bookStatus.textContent = "—";
         }
 
-        card.append(bookTitleCard, authorName, bookPages, bookStatus);
+        card.append(ribbon, bookTitleCard, authorName, bookPages, bookStatus);
         spine.append(bookTitleSpine);
         cover.append(spine, card);
         shelf.append(cover)
