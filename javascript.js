@@ -37,7 +37,7 @@ function displayBooks() {
 
         const authorName = document.createElement("p")
         authorName.className = "author";
-        authorName.textContent = `By ${value.author}`;
+        authorName.textContent = `${value.author}`;
         
         const bookPages = document.createElement("p");
         bookPages.className = "pages";
