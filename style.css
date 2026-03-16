@@ -82,10 +82,8 @@ h1 {
     overflow: hidden;
 }
 .card {
-    padding: 2rem;
     background-color: cornsilk;
     border-radius: 3px 10px 10px 3px;
-    flex: 1;
 }
  .card p {
     margin: 0;
