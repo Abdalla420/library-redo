@@ -99,11 +99,28 @@ h1 {
 .card p {
     margin: 0;
 }
+.titleCard {
+    justify-self: center;
+    align-self: flex-start;
+    font-size: 1.3rem;
+}
+
 .spine p, .card p:not(.status, .author) {
     font-family: sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
  }
+ .author, .pages {
+    font-size: 0.8rem;
+ }
 .author {
      font-family: 'The Vintage' , system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     /* justify-self: center; */
+     text-align: center;
+     align-self: end;
+     border-bottom: solid 1px gray;
+}
+.pages {
+    justify-self: end;
+    align-self: end;;
 }
 .spine {
     background-color: brown;
