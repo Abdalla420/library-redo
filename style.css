@@ -1,7 +1,23 @@
 @font-face {
     font-family: 'Marker';
-    src: url('./fonts/MarkerRegularRegular.woff2') format('woff2'),
-        url('./fonts/MarkerRegularRegular.woff') format('woff');
+    src: url('./fonts/marker/MarkerRegularRegular.woff2') format('woff2'),
+        url('./fonts/marker/MarkerRegularRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Antique Book Cover';
+    src: url('./fonts/book/AntiqueBookCover.woff2') format('woff2'),
+        url('./fonts/book/AntiqueBookCover.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'The Vintage';
+    src: url('./fonts/author/TheVintageRegular.woff2') format('woff2'),
+        url('./fonts/author/TheVintageRegular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -85,6 +101,8 @@ h1 {
     background-color: cornsilk;
     border-radius: 3px 10px 10px 3px;
     flex: 1;
+    /* display: grid;
+    grid-template-rows: ; */
 }
  .card p {
     margin: 0;
