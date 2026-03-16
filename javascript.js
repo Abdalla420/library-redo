@@ -65,6 +65,16 @@ function displayBooks() {
         shelf.append(cover)
     }
 }
+
+// when user press New Book he gets the dialog
+const add = document.querySelector(".add");
+const dialog = document.querySelector(".dialog")
+
+add.addEventListener("click",() => {
+    dialog.showModal();
+})
+
+
 addBookToLibrary("Mo", "egypt", 69, true);
 addBookToLibrary("not-Mo", "not-egypt", 67, false);
 displayBooks();
