@@ -107,14 +107,14 @@ h1 {
 .card p {
     margin: 0;
 }
- .spine p, .card p:not(.status, .author) {
+.spine p, .card p:not(.status, .author) {
     font-family: 'Antique Book Cover' ,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
  }
- .status {
+.status {
     font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
 
  }
- .author {
+.author {
     font-family: 'The Vintage' , system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
  }
 .spine {
