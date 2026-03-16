@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'The Vintage';
+    src: url('TheVintageRegular.woff2') format('woff2'),
+        url('TheVintageRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
