@@ -50,9 +50,12 @@ function displayBooks() {
         const bookStatus = document.createElement("p");
         bookStatus.className = "status";
         if (value.status == true){
-            bookStatus.textContent = `Done`;
+            bookStatus.textContent = `DONE`;
+            ribbon.style.backgroundColor = "#0080FF";
         }else {
             bookStatus.textContent = "—";
+            ribbon.style.backgroundColor = "#d7d7d7";
+            bookStatus.style.color = "#838383";
         }
         
         ribbon.append(bookStatus);
