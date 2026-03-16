@@ -120,10 +120,15 @@ h1 {
 .spine {
     background-color: brown;
     writing-mode: sideways-lr;
-    max-height: auto;
+    height: auto;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .titleSpine {
     margin: 0;
     font-size: 1rem;
-    justify-self: center;
+    /* justify-self: center;
+    align-self: center; */
 }
