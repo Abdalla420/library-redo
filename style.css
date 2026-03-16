@@ -99,7 +99,7 @@ h1 {
 }
 .card {
     background-color: cornsilk;
-    border-radius: 3px 10px 10px 3px;
+    border-radius: 0px 10px 10px 0px;
     flex: 1;
     /* display: grid;
     grid-template-rows: ; */
@@ -125,10 +125,9 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 3px 0px 0px 3px;
 }
 .titleSpine {
     margin: 0;
     font-size: 1rem;
-    /* justify-self: center;
-    align-self: center; */
 }
