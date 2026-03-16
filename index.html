@@ -16,6 +16,27 @@
             <button class="add" type="button">New Book</button>
         </div>
         <div class="shelf-container"></div>
+        <dialog class="dialog">
+            <p></p>
+            <form action="#" name="book" method="get">
+                <div class="authorDialog">
+                    <label for="author">Author's Name:</label>
+                    <input type="text" name="book" id="author">
+                </div>
+                <div class="bookDialog">
+                    <label for="title">Book's Title:</label>
+                    <input type="text" name="book" id="title">
+                </div>
+                <div class="numberDialog">
+                    <label for="number">Number of Pages:</label>
+                    <input type="number" name="book" id="number">
+                </div>
+                <div class="statusDialog">
+                    <label for="status">Read Status</label>
+                    <input type="radio" name="book" id="status" value="Read">
+                </div>
+            </form>
+        </dialog>
     </div>
 </body>
 </html>
