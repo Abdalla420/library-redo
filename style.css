@@ -86,7 +86,7 @@ h1 {
 .bookFooter {
     display: flex;
     justify-content: center;
-
+    gap: 10px;
 }
 .cover {
     justify-self: center;
@@ -132,13 +132,24 @@ h1 {
      width: 110px;
      margin-bottom: px;
 }
+.toggleBtn {
+    background-color: rgb(43, 43, 250);
+    border: 2px solid white;
+    border-radius: 10px;
+    /* width: 55px; */
+    height: 40px;
+    color: white;
+    font-weight: 700;
+}
 .deleteBtn {
     background-color: #F44336;
     border: 2px solid white;
     border-radius: 10px;
-    width: 40px;
+    width: 55px;
     height: 40px;
-    margin-left: 10px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
 }
 .deleteBtn:hover {
     background-color: #da574e;
