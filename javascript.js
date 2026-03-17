@@ -73,7 +73,7 @@ function renderBook(book) {
 
     const deleteBtn = document.createElement("button");
     deleteBtn.className = "deleteBtn";
-    deleteBtn.textContent = "🗑️ Delete";
+    deleteBtn.textContent = "🗑️";
 
     deleteBtn.addEventListener(("click"), () => {
         const index = myLibrary.findIndex(element => element.id == bookContainer.dataset.bookId);
