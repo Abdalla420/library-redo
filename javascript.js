@@ -149,6 +149,6 @@ form.addEventListener("submit", (e)=> {
     
 
 
-addBookToLibrary("Mo", "egypt", 69, true);
-addBookToLibrary("not-Mo", "not-egypt", 67, false);
+addBookToLibrary("George Orwell", "1984", 328, true);
+addBookToLibrary("Frank Herbert", "Dune", 412, false);
 displayBooks();
