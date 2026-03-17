@@ -7,6 +7,10 @@ function Book(author, title, pages, status) {
     this.status = status;
     this.id = window.crypto.randomUUID();
 }
+// Since we are chaging something inside Book constructor and not a dom we use protoype
+Book.prototype.toggleStatus = function(){
+    this.status != this.status;
+}
 
 function addBookToLibrary(a, t, p, s) {
     const createBook = new Book(a, t, p, s);
