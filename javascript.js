@@ -9,7 +9,7 @@ function Book(author, title, pages, status) {
 }
 // Since we are chaging something inside Book constructor and not a dom we use protoype
 Book.prototype.toggleStatus = function(){
-    this.status != this.status;
+    this.status = !this.status;
 }
 
 function addBookToLibrary(a, t, p, s) {
@@ -20,11 +20,13 @@ const shelf = document.querySelector(".shelf-container");
 
 function renderBook(book) {
 
+    const bookContainer = document.createElement("div");
+    bookContainer.className = "bookContainer";
 
     const cover = document.createElement("div");
     cover.className = "cover";
     // storing UUID as a data attribute
-    cover.dataset.BookId = book.id;
+    bookContainer.dataset.bookId = book.id;
     
     //spine and its child
     const spine = document.createElement("div");
@@ -46,16 +48,7 @@ function renderBook(book) {
     authorName.className = "author";
     authorName.textContent = `${book.author}`;
     
-    const deleteBtn = document.createElement("button");
-    deleteBtn.className = "deleteBtn";
-    deleteBtn.textContent = "🗑️";
-
-    deleteBtn.addEventListener(("click"), () => {
-        const index = myLibrary.findIndex(element => element.id == cover.dataset.BookId);
-        myLibrary.splice(index, 1);
-        cover.remove();
-    })
-
+    
     const bookPages = document.createElement("p");
     bookPages.className = "pages";
     bookPages.textContent = `${book.pages} pages`
@@ -74,12 +67,52 @@ function renderBook(book) {
         ribbon.style.backgroundColor = "#d7d7d7";
         bookStatus.style.color = "#838383";
     }
-    
+    // book footer buttons
+    const bookFooter = document.createElement("div");
+    bookFooter.className = "bookFooter";
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.className = "deleteBtn";
+    deleteBtn.textContent = "🗑️ Delete";
+
+    deleteBtn.addEventListener(("click"), () => {
+        const index = myLibrary.findIndex(element => element.id == bookContainer.dataset.bookId);
+        myLibrary.splice(index, 1);
+        bookContainer.remove();
+    })
+
+    const toggleBtn = document.createElement("button");
+    toggleBtn.className = "toggleBtn";
+    if(book.status == true){
+        toggleBtn.textContent = "Mark as Unread";
+    }else{
+        toggleBtn.textContent = "Mark as Read";
+    }
+        // toggle read status
+    toggleBtn.addEventListener("click", () => {
+        book.toggleStatus();
+        if(book.status == true){
+            toggleBtn.textContent = "Mark as Unread";
+
+            bookStatus.textContent = `DONE`;
+            ribbon.style.backgroundColor = "#0080FF";
+            bookStatus.style.color = "white";
+        }else{
+            toggleBtn.textContent = "Mark as Read";
+
+            bookStatus.textContent = "—";
+            ribbon.style.backgroundColor = "#d7d7d7";
+            bookStatus.style.color = "#838383";
+        }   
+    })
+
     ribbon.append(bookStatus);
-    card.append(ribbon, bookTitleCard, authorName, deleteBtn, bookPages);
+    card.append(ribbon, bookTitleCard, authorName, bookPages);
     spine.append(bookTitleSpine);
     cover.append(spine, card);
-    shelf.append(cover)
+    bookFooter.append(toggleBtn, deleteBtn);
+    bookContainer.append(cover, bookFooter);
+    shelf.append(bookContainer);
 }
 function displayBooks() {
     for (const value of myLibrary){
@@ -106,11 +139,15 @@ const statusInput = document.querySelector("#status");
 
 form.addEventListener("submit", (e)=> {
     e.preventDefault();
-    addBookToLibrary(authorInput.value, titleInput.value, pagesInput.value, statusInput.checked);
+    addBookToLibrary(authorInput.value, titleInput.value, Number(pagesInput.value), statusInput.checked);
     renderBook(myLibrary[myLibrary.length - 1])
     form.reset();
     dialog.close();
 })
+
+
+    
+
 
 addBookToLibrary("Mo", "egypt", 69, true);
 addBookToLibrary("not-Mo", "not-egypt", 67, false);
