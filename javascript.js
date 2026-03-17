@@ -74,6 +74,23 @@ add.addEventListener("click",() => {
     dialog.showModal();
 })
 
+const addInput = document.querySelector("#addBtn")
+
+const authorInput = document.querySelector("#author");
+
+const titleInput = document.querySelector("#title");
+
+const pagesInput = document.querySelector("#number")
+
+const statusInput = document.querySelector("#status");
+
+addInput.addEventListener("click", ()=> {
+    addBookToLibrary(authorInput.value, titleInput.value, pagesInput.value, statusInput.checked);
+    displayBooks();
+    dialog.close();
+})
+
+
 
 addBookToLibrary("Mo", "egypt", 69, true);
 addBookToLibrary("not-Mo", "not-egypt", 67, false);
