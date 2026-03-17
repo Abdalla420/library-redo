@@ -149,7 +149,7 @@ h1 {
     text-align: center;
     color: white;
 }
-.dialog {
+.dialog[open] {
     border: none;
     border-radius: 12px;
     box-shadow: 0px 0px 10px 1px lightgray;
@@ -158,8 +158,9 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
-.dialog > p {
+.dialog[open] > p {
     margin: 0;
     margin-bottom: 10px;
 }
