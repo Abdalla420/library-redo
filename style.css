@@ -78,12 +78,15 @@ h1 {
     align-self: center;
     display: flex;
     width: 180px;
-    height: 250px;
-    max-height: 250px; 
+    min-height: 250px; 
     overflow: hidden;
     border-radius: 0px 10px 10px 0px;
     box-shadow: 4px 4px 0px #ccc,
                 6px 6px 0px  #ddd;
+}
+.cover:hover {
+    width: 185px;
+    min-height: 255px; 
 }
 .card {
     background-color: cornsilk;
