@@ -118,6 +118,20 @@ h1 {
      width: 110px;
      margin-bottom: px;
 }
+.deleteBtn {
+    background-color: #F44336;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+.deleteBtn:hover {
+    background-color: #da574e;
+}
+.deleteBtn:active {
+    background-color: #333333;
+}
 .pages {
     margin: 0;
     align-self: end;
