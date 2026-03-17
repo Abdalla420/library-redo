@@ -13,58 +13,69 @@ function addBookToLibrary(a, t, p, s) {
     myLibrary.push(createBook);
 }
 const shelf = document.querySelector(".shelf-container");
+
 function renderBook(book) {
+
+
     const cover = document.createElement("div");
-        cover.className = "cover";
-        
-        //spine and its child
-        const spine = document.createElement("div");
-        spine.className = "spine";
-        
-        const bookTitleSpine = document.createElement("p");
-        bookTitleSpine.className = "titleSpine";
-        bookTitleSpine.textContent = book.title;
+    cover.className = "cover";
+    // storing UUID as a data attribute
+    cover.dataset.BookId = book.id;
+    
+    //spine and its child
+    const spine = document.createElement("div");
+    spine.className = "spine";
+    
+    const bookTitleSpine = document.createElement("p");
+    bookTitleSpine.className = "titleSpine";
+    bookTitleSpine.textContent = book.title;
 
-        // card and its children including ribbon
-        const card = document.createElement("div");
-        card.className = "card";
+    // card and its children including ribbon
+    const card = document.createElement("div");
+    card.className = "card";
 
-        const bookTitleCard = document.createElement("p");
-        bookTitleCard.className = "titleCard";
-        bookTitleCard.textContent = book.title;
+    const bookTitleCard = document.createElement("p");
+    bookTitleCard.className = "titleCard";
+    bookTitleCard.textContent = book.title;
 
-        const authorName = document.createElement("p");
-        authorName.className = "author";
-        authorName.textContent = `${book.author}`;
-        
-        const deleteBtn = document.createElement("button");
-        deleteBtn.className = "deleteBtn";
-        deleteBtn.textContent = "🗑️";
+    const authorName = document.createElement("p");
+    authorName.className = "author";
+    authorName.textContent = `${book.author}`;
+    
+    const deleteBtn = document.createElement("button");
+    deleteBtn.className = "deleteBtn";
+    deleteBtn.textContent = "🗑️";
 
-        const bookPages = document.createElement("p");
-        bookPages.className = "pages";
-        bookPages.textContent = `${book.pages} pages`
-        
-        // ribbon and its child
-        const ribbon = document.createElement("div");
-        ribbon.className = "ribbon";
-        
-        const bookStatus = document.createElement("p");
-        bookStatus.className = "status";
-        if (book.status == true){
-            bookStatus.textContent = `DONE`;
-            ribbon.style.backgroundColor = "#0080FF";
-        }else {
-            bookStatus.textContent = "—";
-            ribbon.style.backgroundColor = "#d7d7d7";
-            bookStatus.style.color = "#838383";
-        }
-        
-        ribbon.append(bookStatus);
-        card.append(ribbon, bookTitleCard, authorName, deleteBtn, bookPages);
-        spine.append(bookTitleSpine);
-        cover.append(spine, card);
-        shelf.append(cover)
+    deleteBtn.addEventListener(("click"), () => {
+        const index = myLibrary.findIndex(element => element.id == cover.dataset.BookId);
+        myLibrary.splice(index, 1);
+        cover.remove();
+    })
+
+    const bookPages = document.createElement("p");
+    bookPages.className = "pages";
+    bookPages.textContent = `${book.pages} pages`
+    
+    // ribbon and its child
+    const ribbon = document.createElement("div");
+    ribbon.className = "ribbon";
+    
+    const bookStatus = document.createElement("p");
+    bookStatus.className = "status";
+    if (book.status == true){
+        bookStatus.textContent = `DONE`;
+        ribbon.style.backgroundColor = "#0080FF";
+    }else {
+        bookStatus.textContent = "—";
+        ribbon.style.backgroundColor = "#d7d7d7";
+        bookStatus.style.color = "#838383";
+    }
+    
+    ribbon.append(bookStatus);
+    card.append(ribbon, bookTitleCard, authorName, deleteBtn, bookPages);
+    spine.append(bookTitleSpine);
+    cover.append(spine, card);
+    shelf.append(cover)
 }
 function displayBooks() {
     for (const value of myLibrary){
@@ -80,7 +91,6 @@ add.addEventListener("click",() => {
     dialog.showModal();
 })
 
-// const addInput = document.querySelector("#addBtn")
 const form = document.querySelector("form");
 const authorInput = document.querySelector("#author");
 
