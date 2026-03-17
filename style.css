@@ -71,8 +71,8 @@ h1 {
     background-repeat: no-repeat;
     padding-top: 60px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    grid-template-rows: repeat(1fr);
+    grid-template: repeat(2, 1fr) / repeat(auto-fit, minmax(180px, 1fr));
+    grid-auto-rows: 1fr;
 }
 .cover {
     justify-self: center;
