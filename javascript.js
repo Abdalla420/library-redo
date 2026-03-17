@@ -33,10 +33,14 @@ function renderBook(book) {
         bookTitleCard.className = "titleCard";
         bookTitleCard.textContent = book.title;
 
-        const authorName = document.createElement("p")
+        const authorName = document.createElement("p");
         authorName.className = "author";
         authorName.textContent = `${book.author}`;
         
+        const deleteBtn = document.createElement("button");
+        deleteBtn.className = "deleteBtn";
+        deleteBtn.textContent = "🗑️";
+
         const bookPages = document.createElement("p");
         bookPages.className = "pages";
         bookPages.textContent = `${book.pages} pages`
@@ -57,7 +61,7 @@ function renderBook(book) {
         }
         
         ribbon.append(bookStatus);
-        card.append(ribbon, bookTitleCard, authorName, bookPages);
+        card.append(ribbon, bookTitleCard, authorName, deleteBtn, bookPages);
         spine.append(bookTitleSpine);
         cover.append(spine, card);
         shelf.append(cover)
