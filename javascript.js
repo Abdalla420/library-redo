@@ -12,11 +12,9 @@ function addBookToLibrary(a, t, p, s) {
     const createBook = new Book(a, t, p, s);
     myLibrary.push(createBook);
 }
-function displayBooks() {
-    const shelf = document.querySelector(".shelf-container");
-    for (const value of myLibrary){
-
-        const cover = document.createElement("div");
+const shelf = document.querySelector(".shelf-container");
+function renderBook(book) {
+    const cover = document.createElement("div");
         cover.className = "cover";
         
         //spine and its child
@@ -25,7 +23,7 @@ function displayBooks() {
         
         const bookTitleSpine = document.createElement("p");
         bookTitleSpine.className = "titleSpine";
-        bookTitleSpine.textContent = value.title;
+        bookTitleSpine.textContent = book.title;
 
         // card and its children including ribbon
         const card = document.createElement("div");
@@ -33,15 +31,15 @@ function displayBooks() {
 
         const bookTitleCard = document.createElement("p");
         bookTitleCard.className = "titleCard";
-        bookTitleCard.textContent = value.title;
+        bookTitleCard.textContent = book.title;
 
         const authorName = document.createElement("p")
         authorName.className = "author";
-        authorName.textContent = `${value.author}`;
+        authorName.textContent = `${book.author}`;
         
         const bookPages = document.createElement("p");
         bookPages.className = "pages";
-        bookPages.textContent = `${value.pages} pages`
+        bookPages.textContent = `${book.pages} pages`
         
         // ribbon and its child
         const ribbon = document.createElement("div");
@@ -49,7 +47,7 @@ function displayBooks() {
         
         const bookStatus = document.createElement("p");
         bookStatus.className = "status";
-        if (value.status == true){
+        if (book.status == true){
             bookStatus.textContent = `DONE`;
             ribbon.style.backgroundColor = "#0080FF";
         }else {
@@ -63,6 +61,10 @@ function displayBooks() {
         spine.append(bookTitleSpine);
         cover.append(spine, card);
         shelf.append(cover)
+}
+function displayBooks() {
+    for (const value of myLibrary){
+        renderBook(value);
     }
 }
 
