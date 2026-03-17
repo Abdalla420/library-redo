@@ -21,19 +21,19 @@
             <form action="#" name="book" method="get">
                 <div class="authorDialog">
                     <label for="author">Author's Name:</label>
-                    <input type="text" name="book" id="author">
+                    <input type="text" name="book" id="author" required minlength="10" maxlength="20">
                 </div>
                 <div class="bookDialog">
                     <label for="title">Book's Title:</label>
-                    <input type="text" name="book" id="title">
+                    <input type="text" name="book" id="title" required minlength="5" maxlength="35">
                 </div>
                 <div class="numberDialog">
                     <label for="number">Number of Pages:</label>
-                    <input type="number" name="book" id="number">
+                    <input type="number" name="book" id="number" required>
                 </div>
                 <div class="statusDialog">
                     <label for="status">Read Status:</label>
-                    <input type="checkbox" name="book" id="status" value="Read">
+                    <input type="checkbox" name="book" id="status" value="Read" required checked>
                 </div>
                 <div class="addBtn">
                     <button type="submit" id="addBtn">Add</button>
