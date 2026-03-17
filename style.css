@@ -74,6 +74,20 @@ h1 {
     grid-template: repeat(2, 1fr) / repeat(auto-fit, minmax(180px, 1fr));
     grid-auto-rows: 1fr;
 }
+.bookContainer {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    gap: 15px;
+    justify-content: center;
+    justify-self: center;
+    align-content: center;
+}
+.bookFooter {
+    display: flex;
+    justify-content: center;
+
+}
 .cover {
     justify-self: center;
     align-self: center;
