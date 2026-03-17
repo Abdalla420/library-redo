@@ -86,9 +86,10 @@ const pagesInput = document.querySelector("#number")
 
 const statusInput = document.querySelector("#status");
 
-addInput.addEventListener("click", ()=> {
+addInput.addEventListener("click", (e)=> {
     addBookToLibrary(authorInput.value, titleInput.value, pagesInput.value, statusInput.checked);
-    displayBooks();
+    renderBook(myLibrary[myLibrary.length - 1])
+    e.preventDefault();
     dialog.close();
 })
 
